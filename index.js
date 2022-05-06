@@ -1,1 +1,1 @@
-export * from "./src/base64.js";
+export * from "./dist/base64.js";
