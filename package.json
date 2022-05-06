@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@jakubneubauer/utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "repository": "jakubneubauer/js-utils",
   "scripts": {

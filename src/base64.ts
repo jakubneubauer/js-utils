@@ -30,22 +30,33 @@ export class Base64Encoder {
     write(chunk: Uint8Array) {
         let v1, v2, v3, start, i;
         let chunkLen = chunk.length;
+        if (chunkLen < 1) return '';
         let result = '';
         let end = chunkLen - 3;
         if (this.extra2 >= 0) {
-            if (chunkLen < 1) return '';
             v1 = this.extra2;
             v2 = this.extra1;
             v3 = chunk[0];
             start = 1;
         } else if (this.extra1 >= 0) {
-            if (chunkLen < 2) return '';
+            if (chunkLen == 1) {
+                this.extra2 = this.extra1;
+                this.extra1 = chunk[0];
+                return '';
+            }
             v1 = this.extra1;
             v2 = chunk[0];
             v3 = chunk[1];
             start = 2;
         } else {
-            if (chunkLen < 3) return '';
+            if (chunkLen == 1) {
+                this.extra1 = chunk[0];
+                return '';
+            } else if (chunkLen == 2) {
+                this.extra2 = chunk[0];
+                this.extra1 = chunk[1];
+                return '';
+            }
             v1 = chunk[0];
             v2 = chunk[1];
             v3 = chunk[2];

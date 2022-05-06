@@ -6,6 +6,13 @@ test("encoder", () => {
     result += enc.flush();
     expect(result).toBe("aGVsbG8=")
 })
+test("encoder streaming", () => {
+    let enc = new Base64Encoder();
+    let result = enc.write(new Uint8Array([104,101,108,108]));
+    result += enc.write(new Uint8Array([111]));
+    result += enc.flush();
+    expect(result).toBe("aGVsbG8=")
+})
 
 test("decoder non-padded 1", () => {
     let dec = new Base64Decoder();
