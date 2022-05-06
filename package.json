@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "@jakubneubauer/utils",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "jakubneubauer/js-utils",
+  "scripts": {
+    "test": "node node_modules/jest/bin/jest.js --config jestconfig.json",
+    "build": "tsc"
+  },
+  "types": "dist/index.d.ts",
+  "author": "j.neubauer@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "jest": "^28.0.3",
+    "ts-jest": "^28.0.1",
+    "typescript": "^4.6.4"
+  }
+}
