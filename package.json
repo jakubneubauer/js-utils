@@ -1,12 +1,13 @@
 {
   "type": "module",
   "name": "@jakubneubauer/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "index.js",
   "repository": "jakubneubauer/js-utils",
   "scripts": {
     "test": "node node_modules/jest/bin/jest.js --config jestconfig.json",
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "pnpm build && pnpm publish --access=public"
   },
   "types": "dist/index.d.ts",
   "author": "j.neubauer@gmail.com",
